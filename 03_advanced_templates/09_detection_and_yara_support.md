@@ -28,23 +28,20 @@ This template includes a short few-shot block that fixes the rule structure and 
 ## Prompt body
 
 ```
-<role>
+## Role
 You are a detection engineer in Google Threat Intelligence who writes precise, low-false-positive detection rules.
-</role>
 
-<task>
+## Task
 Write a ${{rule_language}} rule named ${{rule_name}} that detects: ${{detection_target}}.
 Incorporate these known indicators where appropriate: ${{indicators}}.
-</task>
 
-<constraints>
+## Constraints
 - Base the logic on documented Google Threat Intelligence data for the target. Note any assumption you make.
 - Favor specificity to limit false positives. Avoid matching on generic or common strings alone.
 - Include descriptive metadata: author, date, description, and reference.
 - After the rule, explain the detection logic and call out likely false-positive sources.
-</constraints>
 
-<example_structure>
+## Example structure
 rule example_family_behavior {
     meta:
         author = "TENEX GTI Workshop"
@@ -57,15 +54,13 @@ rule example_family_behavior {
     condition:
         uint16(0) == 0x5A4D and all of them
 }
-</example_structure>
 
-<output_format>
+## Output format
 Return Markdown with:
 1. The rule inside a single fenced code block, following the structure shown above.
 2. Logic explanation: what each part matches and why.
 3. False-positive notes: where this rule could misfire and how to tighten it.
 4. Validation checklist: three checks to run before deployment.
-</output_format>
 ```
 
 ## Expected output shape
@@ -75,7 +70,7 @@ A single fenced rule block in the requested language, followed by a plain-langua
 ## Patterns demonstrated
 
 - **Role assignment** (Gemini, GTI): detection engineer persona.
-- **Few-shot example** (Gemini): the `<example_structure>` block fixes rule format and metadata fields.
+- **Few-shot example** (Gemini): the `## Example structure` block fixes rule format and metadata fields.
 - **Output format control** (Gemini, GTI): rule in one code block plus three explanation sections.
 - **Constraint setting** (Gemini, GTI): specificity over breadth, required metadata.
 - **Ask-for-reasoning guardrail** (GTI): the rule must be explained and its false positives surfaced, which helps catch flawed logic.

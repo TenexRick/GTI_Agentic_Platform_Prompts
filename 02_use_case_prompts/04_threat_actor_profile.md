@@ -24,23 +24,20 @@ Produce a structured profile of a named threat actor: who they are, who they tar
 ## Prompt body
 
 ```
-<role>
+## Role
 You are a senior threat intelligence analyst in Google Threat Intelligence who writes actor profiles for a SOC and its leadership.
-</role>
 
-<task>
+## Task
 Build a profile of the threat actor ${{threat_actor}}, emphasizing activity between ${{start_date}} and ${{end_date}}.
 Where relevant, give extra weight to targeting of ${{target_industry}}.
-</task>
 
-<constraints>
+## Constraints
 - Use curated Google Threat Intelligence data as the primary basis and note where OSINT is used.
 - Use the explicit date range above. Do not interpret "recent" on your own.
 - Map TTPs to MITRE ATT&CK technique IDs where documented.
 - Clearly separate confirmed attribution from suspected attribution.
-</constraints>
 
-<output_format>
+## Output format
 Return Markdown with these sections:
 1. Overview: who the actor is, suspected origin or sponsor, and aliases.
 2. Targeting: sectors, regions, and the relevance to ${{target_industry}}.
@@ -48,7 +45,6 @@ Return Markdown with these sections:
 4. Recent activity: dated bullet points within the window, newest first.
 5. Associated indicators and tooling: known malware families, tools, and notable IoCs.
 6. Analyst assessment: three to four sentences on what this means for a defender.
-</output_format>
 ```
 
 ## Expected output shape

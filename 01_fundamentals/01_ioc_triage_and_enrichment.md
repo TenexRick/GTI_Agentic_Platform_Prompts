@@ -22,29 +22,25 @@ Take a single indicator of compromise (IP, domain, URL, or file hash) and return
 ## Prompt body
 
 ```
-<role>
+## Role
 You are a senior CTI analyst performing first-pass indicator triage in Google Threat Intelligence.
-</role>
 
-<task>
+## Task
 Triage the following indicator and return a maliciousness verdict with supporting evidence.
 Indicator: ${{ioc}}
-</task>
 
-<constraints>
+## Constraints
 - Prioritize ${{data_source}} Google Threat Intelligence data.
 - Base the verdict on the GTI score, antivirus detections, and documented associations.
 - Do not speculate. If GTI has no data on the indicator, say so explicitly.
 - If you are uncertain, state your confidence level and what additional context would resolve it.
-</constraints>
 
-<output_format>
+## Output format
 Return Markdown with these sections, in this order:
 1. Verdict: one of MALICIOUS, SUSPICIOUS, BENIGN, or UNKNOWN, with a one-line justification.
 2. Reputation: the GTI score and the antivirus detection summary.
 3. Associations: any related threat actors, malware families, or campaigns, as a bulleted list. Write "None documented" if empty.
 4. Recommended next step: one sentence.
-</output_format>
 ```
 
 ## Expected output shape

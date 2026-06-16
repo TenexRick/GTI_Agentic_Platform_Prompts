@@ -33,7 +33,7 @@ Gemini 3 responds best to direct, well-structured prompts. State the goal in pla
 
 ### 3. State the final result you want
 
-Say what "done" looks like. GTI's guidance: "Clearly state what you want the final result to be." If you need a verdict, ask for a verdict. If you need a table of IoCs, say so.
+Say what "done" looks like. GTI's guidance: "Clearly state what you want the final result to be." If you need a verdict, ask for a verdict but ensure you've defined the criteria on how to produce that verdict. If you need a table of IoCs, say so.
 
 ### 4. Set constraints and boundaries
 
@@ -88,8 +88,6 @@ Two practical reasons to standardize on Markdown for your GTI prompt library:
 
 - **Clear delimiters improve responses.** Gemini 3 guidance recommends using consistent delimiters to separate the parts of a prompt. XML-style tags such as `<role>`, `<constraints>`, `<task>`, and `<output_format>`, or Markdown headings, both work. Pick one style and use it consistently within a single prompt. For long or complex sections you can also use `BEGIN`/`END` or `{}` delimiters to mark where a block starts and stops. The ordering, labeling, and delimiters all affect output quality.
 - **Markdown is a parseable standard.** When you want output that another tool can read, Gemini guidance says to use a widely recognized format. Markdown is one of those formats, which is why the prompt bodies in this repo live inside fenced code blocks: they are copy-ready and unambiguous.
-
-Every prompt file in this repo is a `.md` file. The prompt body itself is wrapped in a fenced code block so you can copy it in one click and paste it straight into the Agentic conversation field or save it as a GTI prompt.
 
 ---
 
