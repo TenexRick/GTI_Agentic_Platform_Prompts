@@ -2,7 +2,7 @@
 
 **Tier:** Fundamentals (beginner)
 
-## Purpose
+## Description
 
 Take a file hash and get a plain-language explanation of what the file is, what it does, and whether it is malicious, using GTI's Malware Analysis agent. This turns an opaque SHA256 into an understandable behavioral summary without manual reverse engineering.
 
@@ -34,35 +34,6 @@ You are a malware analyst working in Google Threat Intelligence. You explain tec
 Analyze the file identified by this hash and explain what it is, what it does, and whether it is malicious.
 Hash: ${{file_hash}}
 Analysis depth: ${{depth}}
-</task>
-
-<constraints>
-- Use existing Google Threat Intelligence data for this hash, including sandbox detonation and Code Insight, before considering any new analysis.
-- If the hash is not present in Google Threat Intelligence, state that clearly and stop. Do not assume behavior.
-- Ground every capability claim in observed evidence. Separate confirmed behavior from inference.
-</constraints>
-
-<output_format>
-Return Markdown with these sections:
-1. Identification: file type, common name or family if known, and the maliciousness verdict.
-2. Key behaviors: a bulleted list of observed behaviors (persistence, C2, evasion, data theft, and so on).
-3. Indicators: notable IoCs extracted from the sample (C2 domains or IPs, mutexes, dropped files), or "None documented."
-4. Associations: related malware family, threat actor, or campaign, or "None documented."
-5. Analyst summary: two to three sentences a SOC analyst can paste into a ticket.
-</output_format>
-```
-
-## Filled-in example
-
-```
-<role>
-You are a malware analyst working in Google Threat Intelligence. You explain technical findings in clear language a SOC analyst can act on.
-</role>
-
-<task>
-Analyze the file identified by this hash and explain what it is, what it does, and whether it is malicious.
-Hash: 5d41402abc4b2a76b9719d911017c592a1b2c3d4e5f60718293a4b5c6d7e8f90
-Analysis depth: deep
 </task>
 
 <constraints>

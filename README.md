@@ -12,6 +12,7 @@ Authors: **Anthony Guida** (VP of Customer Engineering) and **Rick Kotlarz** (Cu
 - [What this is](#what-this-is)
 - [Learning objectives](#learning-objectives)
 - [Who it is for](#who-it-is-for)
+- [Requirements](#requirements)
 - [How to use this repo](#how-to-use-this-repo)
 - [How to adapt the prompts](#how-to-adapt-the-prompts)
 - [Tiered prompt index](#tiered-prompt-index)
@@ -23,14 +24,17 @@ Authors: **Anthony Guida** (VP of Customer Engineering) and **Rick Kotlarz** (Cu
 - [Prompt design patterns used in this repo](#prompt-design-patterns-used-in-this-repo)
 - [A note on accuracy](#a-note-on-accuracy)
 - [Sources and attribution](#sources-and-attribution)
+- [Legal disclaimer](#legal-disclaimer)
 
-Looking for the slide outline? See [`PRESENTATION_OUTLINE.md`](PRESENTATION_OUTLINE.md). New to prompting? Start with [`01_fundamentals/00_prompt_engineering_best_practices.md`](01_fundamentals/00_prompt_engineering_best_practices.md).
+New to prompting? Start with [Prompt Engineering Best Practices](01_fundamentals/00_prompt_engineering_best_practices.md).
 
 ---
 
 ## What this is
 
-The GTI Agentic platform is a conversational interface to Google's threat intelligence, powered by Gemini. This repo teaches you to prompt it well, and gives you ten ready-to-use, parametrized prompts spanning everyday triage to advanced, team-standardized workflows.
+**What is the Google Threat Intelligence Agentic platform?** It is the conversational interface to Google's threat intelligence. You chat directly with specialized AI agents, powered by Google Gemini and grounded in Google's comprehensive security data, to accelerate investigations, analyze potential threats, and get immediate answers to security questions. In short, it simplifies threat intelligence by letting you ask, rather than query.
+
+This repo teaches you to prompt that platform well, and gives you ten ready-to-use, parametrized prompts spanning everyday triage to advanced, team-standardized workflows.
 
 The organizing idea behind every file:
 
@@ -57,9 +61,19 @@ Two audiences, one ramp:
 - **New to prompt engineering.** Start at the fundamentals and the best-practices guide. Each prompt is copy-ready.
 - **Experienced threat intel analysts.** Skim the fundamentals, then focus on the advanced templates and the patterns each one demonstrates.
 
+## Requirements
+
+The Agentic platform is only available to users with the Google Threat Intelligence (Google TI) Enterprise or Enterprise Plus licenses, with no quota limitations on its use.
+
+A few related notes from the GTI documentation:
+
+- Uploading files to Private Scanning through Agentic consumes your existing Private Scanning quota, so check whether an IoC is already in GTI before submitting a file.
+- Do not submit personal or sensitive information in queries or file uploads. You are responsible for the content of your submissions.
+- A group administrator can disable all AI tools, including Agentic, under My group, then Settings, then AI Settings, to meet legal or compliance requirements.
+
 ## How to use this repo
 
-1. **Read the best-practices guide first:** [`01_fundamentals/00_prompt_engineering_best_practices.md`](01_fundamentals/00_prompt_engineering_best_practices.md). It covers the Gemini 3 strategies, why Markdown is the right format, and a fast way to author prompts with Gemini and Google Docs.
+1. **Read the best-practices guide first:** [Prompt Engineering Best Practices](01_fundamentals/00_prompt_engineering_best_practices.md). It covers the Gemini 3 strategies, why Markdown is the right format, and a fast way to author prompts with Gemini and Google Docs.
 2. **Pick a prompt** from the tiered index below that matches your task.
 3. **Copy the prompt body.** Every prompt body sits in a fenced code block for one-click copy.
 4. **Fill the variables.** Replace each `${{variable_name}}` with your value, or paste the prompt into the Agentic conversation field and run it.
@@ -148,11 +162,15 @@ Generative AI can produce inaccurate information. Treat every Agentic answer as 
 
 This workshop is grounded entirely in official Google and VirusTotal documentation:
 
-- Gemini API, Prompt design strategies: https://ai.google.dev/gemini-api/docs/prompting-strategies
-- Gemini 3 prompting guide, Gemini Enterprise Agent Platform: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/start/gemini-3-prompting-guide
-- GTI Agentic User Guide: https://gtidocs.virustotal.com/docs/agentic-user-guide
 - GTI Agentic Platform: https://gtidocs.virustotal.com/docs/agentic-platform
+- GTI Agentic User Guide: https://gtidocs.virustotal.com/docs/agentic-user-guide
+- Gemini 3 prompting guide, Gemini Enterprise Agent Platform: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/start/gemini-3-prompting-guide
+- Gemini API, Prompt design strategies: https://ai.google.dev/gemini-api/docs/prompting-strategies
 
 ---
 
-© TENEX.AI. Workshop content authored by Anthony Guida and Rick Kotlarz for Google Threat Intelligence users.
+## Legal disclaimer
+
+Google Threat Intelligence, the Google Threat Intelligence Agentic platform, VirusTotal, Gemini, and all related names, logos, product features, and documentation are the property of Google LLC and its affiliates. All rights in those products and materials belong to Google. The prompt design strategies and Agentic best practices referenced in this workshop originate from Google and VirusTotal official documentation, which is cited throughout and linked in the Sources and attribution section above.
+
+This workshop is an independent educational resource created by TENEX.AI to illustrate use and to share Google's published best practices for effectively leveraging the Google Threat Intelligence Agentic platform. It is not created, endorsed, sponsored, or affiliated with Google or VirusTotal, and it does not claim any ownership of their intellectual property. Any trademarks are used only for identification and educational reference. The content is provided as is, without warranty of any kind, and is not a substitute for the official Google and VirusTotal documentation. Always verify against the primary sources, and follow your organization's licensing terms and policies when using the platform.

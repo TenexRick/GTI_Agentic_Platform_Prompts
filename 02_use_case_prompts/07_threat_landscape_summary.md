@@ -2,7 +2,7 @@
 
 **Tier:** Use case (intermediate)
 
-## Purpose
+## Description
 
 Produce a time-bounded rollup of threat activity relevant to a sector, region, or both. Use it for a daily or weekly intel summary, a shift handoff, or a quick read on what changed in a defined window.
 
@@ -30,34 +30,6 @@ You are a threat intelligence analyst in Google Threat Intelligence producing a 
 
 <task>
 Summarize notable threat activity affecting ${{sector}} in ${{region}} between ${{start_date}} and ${{end_date}}.
-</task>
-
-<constraints>
-- Use the explicit date window above. Do not use "latest" or "recent" as a substitute.
-- Prioritize curated Google Threat Intelligence data and note where OSINT is included.
-- Include only items that fall inside the window and match the sector and region filters.
-- Rank items by significance, most significant first.
-</constraints>
-
-<output_format>
-Return Markdown with these sections:
-1. Headline: the two or three most important developments, as a short bulleted list.
-2. Threat activity: a table with columns Date, Item, Type (actor, campaign, malware, vulnerability), and Why it matters.
-3. Emerging trends: patterns observed across the window, as bullets.
-4. Watch list: items to monitor going into the next period.
-5. Sources note: one line on the balance of curated versus OSINT used.
-</output_format>
-```
-
-## Filled-in example
-
-```
-<role>
-You are a threat intelligence analyst in Google Threat Intelligence producing a periodic landscape briefing.
-</role>
-
-<task>
-Summarize notable threat activity affecting healthcare in North America between 2026-06-09 and 2026-06-16.
 </task>
 
 <constraints>

@@ -2,7 +2,7 @@
 
 **Tier:** Fundamentals (beginner)
 
-## Purpose
+## Description
 
 Take a single indicator of compromise (IP, domain, URL, or file hash) and return a fast, sourced verdict: is it malicious, what is its reputation, and what is it associated with. This is the everyday first move when an alert hands you one indicator and you need a decision.
 
@@ -33,34 +33,6 @@ Indicator: ${{ioc}}
 
 <constraints>
 - Prioritize ${{data_source}} Google Threat Intelligence data.
-- Base the verdict on the GTI score, antivirus detections, and documented associations.
-- Do not speculate. If GTI has no data on the indicator, say so explicitly.
-- If you are uncertain, state your confidence level and what additional context would resolve it.
-</constraints>
-
-<output_format>
-Return Markdown with these sections, in this order:
-1. Verdict: one of MALICIOUS, SUSPICIOUS, BENIGN, or UNKNOWN, with a one-line justification.
-2. Reputation: the GTI score and the antivirus detection summary.
-3. Associations: any related threat actors, malware families, or campaigns, as a bulleted list. Write "None documented" if empty.
-4. Recommended next step: one sentence.
-</output_format>
-```
-
-## Filled-in example
-
-```
-<role>
-You are a senior CTI analyst performing first-pass indicator triage in Google Threat Intelligence.
-</role>
-
-<task>
-Triage the following indicator and return a maliciousness verdict with supporting evidence.
-Indicator: ac00dd7d54764e0389de434f3203c2a3384d2ffcc20615f40f09c4c0646c8d3f
-</task>
-
-<constraints>
-- Prioritize curated Google Threat Intelligence data.
 - Base the verdict on the GTI score, antivirus detections, and documented associations.
 - Do not speculate. If GTI has no data on the indicator, say so explicitly.
 - If you are uncertain, state your confidence level and what additional context would resolve it.

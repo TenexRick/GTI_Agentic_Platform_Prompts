@@ -2,7 +2,7 @@
 
 **Tier:** Use case (intermediate)
 
-## Purpose
+## Description
 
 Produce a structured profile of a named threat actor: who they are, who they target, the TTPs they use, and their recent activity. Use it to brief a team before an engagement, to enrich an attribution hypothesis, or to feed a hunt.
 
@@ -44,36 +44,6 @@ Where relevant, give extra weight to targeting of ${{target_industry}}.
 Return Markdown with these sections:
 1. Overview: who the actor is, suspected origin or sponsor, and aliases.
 2. Targeting: sectors, regions, and the relevance to ${{target_industry}}.
-3. TTPs: a table with columns Tactic, Technique, ATT&CK ID, and Notes.
-4. Recent activity: dated bullet points within the window, newest first.
-5. Associated indicators and tooling: known malware families, tools, and notable IoCs.
-6. Analyst assessment: three to four sentences on what this means for a defender.
-</output_format>
-```
-
-## Filled-in example
-
-```
-<role>
-You are a senior threat intelligence analyst in Google Threat Intelligence who writes actor profiles for a SOC and its leadership.
-</role>
-
-<task>
-Build a profile of the threat actor APT44, emphasizing activity between 2026-03-01 and 2026-06-01.
-Where relevant, give extra weight to targeting of energy and utilities.
-</task>
-
-<constraints>
-- Use curated Google Threat Intelligence data as the primary basis and note where OSINT is used.
-- Use the explicit date range above. Do not interpret "recent" on your own.
-- Map TTPs to MITRE ATT&CK technique IDs where documented.
-- Clearly separate confirmed attribution from suspected attribution.
-</constraints>
-
-<output_format>
-Return Markdown with these sections:
-1. Overview: who the actor is, suspected origin or sponsor, and aliases.
-2. Targeting: sectors, regions, and the relevance to energy and utilities.
 3. TTPs: a table with columns Tactic, Technique, ATT&CK ID, and Notes.
 4. Recent activity: dated bullet points within the window, newest first.
 5. Associated indicators and tooling: known malware families, tools, and notable IoCs.

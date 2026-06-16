@@ -2,7 +2,7 @@
 
 **Tier:** Advanced template
 
-## Purpose
+## Description
 
 Generate detection logic from a malware family, a behavior, or a set of indicators. Supports both YARA (file and content matching) and YARA-L (Google SecOps detection language), with a built-in validation step. Use it to turn intel into a deployable detection draft.
 
@@ -35,49 +35,6 @@ You are a detection engineer in Google Threat Intelligence who writes precise, l
 <task>
 Write a ${{rule_language}} rule named ${{rule_name}} that detects: ${{detection_target}}.
 Incorporate these known indicators where appropriate: ${{indicators}}.
-</task>
-
-<constraints>
-- Base the logic on documented Google Threat Intelligence data for the target. Note any assumption you make.
-- Favor specificity to limit false positives. Avoid matching on generic or common strings alone.
-- Include descriptive metadata: author, date, description, and reference.
-- After the rule, explain the detection logic and call out likely false-positive sources.
-</constraints>
-
-<example_structure>
-rule example_family_behavior {
-    meta:
-        author = "TENEX GTI Workshop"
-        date = "2026-06-16"
-        description = "Detects example behavior in the example family"
-        reference = "GTI"
-    strings:
-        $s1 = "example_marker" ascii wide
-        $s2 = { 6A 40 68 00 30 00 00 }
-    condition:
-        uint16(0) == 0x5A4D and all of them
-}
-</example_structure>
-
-<output_format>
-Return Markdown with:
-1. The rule inside a single fenced code block, following the structure shown above.
-2. Logic explanation: what each part matches and why.
-3. False-positive notes: where this rule could misfire and how to tighten it.
-4. Validation checklist: three checks to run before deployment.
-</output_format>
-```
-
-## Filled-in example
-
-```
-<role>
-You are a detection engineer in Google Threat Intelligence who writes precise, low-false-positive detection rules.
-</role>
-
-<task>
-Write a YARA-L rule named wannacry_killswitch_beacon that detects: WannaCry ransomware kill-switch domain beaconing.
-Incorporate these known indicators where appropriate: iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com.
 </task>
 
 <constraints>

@@ -2,7 +2,7 @@
 
 **Tier:** Advanced template
 
-## Purpose
+## Description
 
 This is the capstone. It is a single, fully structured template that produces an executive threat brief and demonstrates every prompt design pattern in the repo stacked together. It is built to be saved as a shared GTI prompt so an entire team produces briefs in one consistent voice and format. Change the variables, not the structure.
 
@@ -71,58 +71,6 @@ Return Markdown with these sections:
 1. Executive summary: three to four sentences. Impact first, no jargon.
 2. What we know: the key facts about the subject, as bullets, within the window.
 3. Why it matters to us: relevance tied to ${{org_context}}.
-4. Recommended actions: prioritized, owner-ready steps.
-5. Confidence and sources: one line on overall confidence and the curated-versus-OSINT balance.
-</output_format>
-
-<final_instruction>
-Based on the information above, produce the brief. Think carefully before writing, then return only the brief in the specified format.
-</final_instruction>
-```
-
-## Filled-in example
-
-```
-<role>
-You are a senior threat intelligence analyst at TENEX.AI delivering briefings to executive leadership.
-You write with precision and lead with the business impact.
-</role>
-
-<instructions>
-1. Plan: identify what executive leadership needs to know about this campaign to make a decision.
-2. Execute: gather the relevant intelligence on the subject within the activity window.
-3. Validate: check that every claim is supported by a Google Threat Intelligence source before including it.
-4. Format: deliver the brief in the exact structure below, at the target length.
-</instructions>
-
-<constraints>
-- Prioritize curated Google Threat Intelligence data. Note where OSINT or Google Search is used.
-- Use the explicit activity window 2026-05-16 to 2026-06-16. Do not use "latest" or "recent."
-- Lead with impact to the reader. Keep jargon out of the executive summary.
-- Separate confirmed facts from assessments. Flag any low-confidence claim.
-- Target length: one page. Be concise; expand only where impact justifies it.
-</constraints>
-
-<context>
-Subject: a ransomware campaign targeting healthcare providers
-Subject type: campaign
-Reader organization and exposure: a US regional hospital network with internet-facing remote access
-</context>
-
-<task>
-Based on the context above, write an executive threat brief on a ransomware campaign targeting healthcare providers.
-</task>
-
-<tone_anchor>
-Executive summary sentences should read like this example:
-"Group X has actively targeted regional healthcare providers in the last 30 days, and an unpatched VPN appliance in our environment is the most likely entry point."
-</tone_anchor>
-
-<output_format>
-Return Markdown with these sections:
-1. Executive summary: three to four sentences. Impact first, no jargon.
-2. What we know: the key facts about the subject, as bullets, within the window.
-3. Why it matters to us: relevance tied to a US regional hospital network with internet-facing remote access.
 4. Recommended actions: prioritized, owner-ready steps.
 5. Confidence and sources: one line on overall confidence and the curated-versus-OSINT balance.
 </output_format>

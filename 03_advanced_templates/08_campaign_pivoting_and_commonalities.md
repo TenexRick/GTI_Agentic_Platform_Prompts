@@ -2,7 +2,7 @@
 
 **Tier:** Advanced template
 
-## Purpose
+## Description
 
 Start from a seed indicator or campaign and expand outward: find related indicators, compute what they have in common, and surface the infrastructure and tooling that ties them together. Use it to grow a small lead into a fuller picture of a campaign.
 
@@ -52,45 +52,6 @@ Work in stages and show your result for each:
 - Prioritize curated Google Threat Intelligence data and note where OSINT is used.
 - Stay within the activity window and the pivot scope.
 - Do not exceed ${{max_indicators}} related indicators. If more exist, return the most relevant and say so.
-- Keep confirmed relationships separate from probable ones.
-</constraints>
-
-<output_format>
-Return Markdown with these sections:
-1. Anchor summary: what the seed is.
-2. Related indicators: a table with columns Indicator, Type, Relationship, and Confidence.
-3. Commonalities: a bulleted list of shared attributes across the set.
-4. Cluster assessment: one or several campaigns, with reasoning.
-5. Suggested next pivots: two or three follow-up moves.
-</output_format>
-```
-
-## Filled-in example
-
-```
-<role>
-You are a threat hunter in Google Threat Intelligence who expands campaigns from a seed indicator and identifies what ties related indicators together.
-</role>
-
-<task>
-Starting from the seed below, expand to related indicators and compute their commonalities.
-Seed: emotet
-Pivot scope: infrastructure and files
-Activity window: 2026-05-01 to 2026-06-01
-</task>
-
-<instructions>
-Work in stages and show your result for each:
-1. Anchor: establish what the seed is and its key attributes.
-2. Pivot: find related indicators within the pivot scope and the activity window. Cap the set at 25 indicators.
-3. Commonalities: identify attributes shared across the related set (shared infrastructure, mutexes, certificates, registrars, behaviors, ATT&CK techniques).
-4. Cluster: state whether the related set appears to form one campaign or several, and why.
-</instructions>
-
-<constraints>
-- Prioritize curated Google Threat Intelligence data and note where OSINT is used.
-- Stay within the activity window and the pivot scope.
-- Do not exceed 25 related indicators. If more exist, return the most relevant and say so.
 - Keep confirmed relationships separate from probable ones.
 </constraints>
 

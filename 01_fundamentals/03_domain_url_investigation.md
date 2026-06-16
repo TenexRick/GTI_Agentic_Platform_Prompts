@@ -2,7 +2,7 @@
 
 **Tier:** Fundamentals (beginner)
 
-## Purpose
+## Description
 
 Investigate a domain or URL: its reputation, hosting and infrastructure, related indicators, and any documented threat ties. Use it to decide whether to block, monitor, or clear web infrastructure that shows up in an alert or a phishing report.
 
@@ -46,35 +46,6 @@ Return Markdown with these sections:
 3. Related indicators: associated domains, subdomains, IPs, or files, as a bulleted list.
 4. Threat associations: linked actors, malware, or campaigns, or "None documented."
 5. Recommendation: a one-line call tied to the ${{decision}} decision.
-</output_format>
-```
-
-## Filled-in example
-
-```
-<role>
-You are a threat infrastructure analyst in Google Threat Intelligence specializing in web-based threats.
-</role>
-
-<task>
-Investigate the following web indicator and assess the risk it poses.
-Indicator: https://secure-account-verify.example/login
-</task>
-
-<constraints>
-- Prioritize curated Google Threat Intelligence data.
-- Cover reputation, hosting and infrastructure, related indicators, and any documented threat associations.
-- Frame the recommendation to support this decision: block.
-- State explicitly when a category has no data rather than filling gaps with assumptions.
-</constraints>
-
-<output_format>
-Return Markdown with these sections:
-1. Verdict and risk: MALICIOUS, SUSPICIOUS, BENIGN, or UNKNOWN, plus a one-line risk statement.
-2. Infrastructure: hosting, resolutions, registrar or ASN, and notable certificate or WHOIS facts.
-3. Related indicators: associated domains, subdomains, IPs, or files, as a bulleted list.
-4. Threat associations: linked actors, malware, or campaigns, or "None documented."
-5. Recommendation: a one-line call tied to the block decision.
 </output_format>
 ```
 
