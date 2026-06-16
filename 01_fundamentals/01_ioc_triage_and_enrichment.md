@@ -59,3 +59,7 @@ A short Markdown report: a one-word verdict with justification, a reputation lin
 - **Source keyword steering** (GTI): `curated` vs `osint` controls the data the agent draws on.
 - **Hallucination guardrail** (GTI): requires the agent to state when GTI has no data and to express confidence.
 - **Parametrization** (GTI): `${{ioc}}` and `${{data_source}}`.
+
+---
+
+[Return to README.md](../README.md)

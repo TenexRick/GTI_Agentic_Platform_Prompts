@@ -78,3 +78,7 @@ A staged Markdown report: an anchor summary, a capped related-indicator table wi
 - **Explicit dates** (GTI): `${{start_date}}` and `${{end_date}}`.
 - **Confidence separation** (GTI): confirmed versus probable relationships.
 - **Parametrization** (GTI): `${{seed_indicator}}`, `${{pivot_scope}}`, `${{start_date}}`, `${{end_date}}`, `${{max_indicators}}`.
+
+---
+
+[Return to README.md](../README.md)

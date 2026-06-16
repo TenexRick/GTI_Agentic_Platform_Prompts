@@ -105,3 +105,7 @@ This template is the full stack:
 - **Hallucination guardrail** (GTI): validate-before-include and confidence flags.
 - **Explicit dates and source steering** (GTI): activity window and curated-versus-OSINT balance.
 - **Parametrization for reuse** (GTI): seven variables, designed to be saved as a shared team prompt.
+
+---
+
+[Return to README.md](../README.md)

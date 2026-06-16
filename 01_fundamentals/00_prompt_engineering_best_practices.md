@@ -141,3 +141,7 @@ This guide is grounded in official Google and VirusTotal documentation:
 - Gemini 3 prompting guide, Gemini Enterprise Agent Platform: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/start/gemini-3-prompting-guide
 - GTI Agentic User Guide: https://gtidocs.virustotal.com/docs/agentic-user-guide
 - GTI Agentic Platform: https://gtidocs.virustotal.com/docs/agentic-platform
+
+---
+
+[Return to README.md](../README.md)

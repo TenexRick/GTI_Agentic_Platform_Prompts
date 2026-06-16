@@ -64,3 +64,7 @@ A six-section Markdown profile, with a TTP table mapped to ATT&CK and a dated re
 - **Source keyword steering** (GTI): curated-first with OSINT noted.
 - **Hallucination guardrail** (GTI): confirmed vs suspected attribution must be separated.
 - **Parametrization** (GTI): `${{threat_actor}}`, `${{start_date}}`, `${{end_date}}`, `${{target_industry}}`.
+
+---
+
+[Return to README.md](../README.md)

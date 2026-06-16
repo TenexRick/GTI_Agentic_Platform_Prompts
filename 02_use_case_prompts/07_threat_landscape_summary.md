@@ -62,3 +62,7 @@ A dated Markdown digest: a short headline list, a ranked activity table scoped t
 - **Output format control** (Gemini, GTI): mixed sections plus an activity table.
 - **Source keyword steering** (GTI): curated-first with OSINT noted.
 - **Parametrization** (GTI): `${{sector}}`, `${{region}}`, `${{start_date}}`, `${{end_date}}`.
+
+---
+
+[Return to README.md](../README.md)

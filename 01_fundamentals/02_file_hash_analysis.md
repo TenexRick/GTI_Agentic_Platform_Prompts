@@ -64,3 +64,7 @@ A structured Markdown report identifying the file and its verdict, a behavior li
 - **Output format control** (Gemini, GTI): five fixed sections.
 - **Operational best practice** (GTI): check GTI before consuming Private Scanning quota.
 - **Parametrization** (GTI): `${{file_hash}}` and `${{depth}}`.
+
+---
+
+[Return to README.md](../README.md)

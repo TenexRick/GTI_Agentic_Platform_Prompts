@@ -61,3 +61,7 @@ A Markdown report with a verdict and risk line, an infrastructure section, a rel
 - **Source keyword steering** (GTI): `curated` vs `osint`.
 - **Output format control** (Gemini, GTI): five fixed sections.
 - **Parametrization** (GTI): `${{web_ioc}}`, `${{data_source}}`, `${{decision}}`.
+
+---
+
+[Return to README.md](../README.md)

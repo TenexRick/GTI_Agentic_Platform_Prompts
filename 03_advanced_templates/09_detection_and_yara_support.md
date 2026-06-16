@@ -81,3 +81,7 @@ A single fenced rule block in the requested language, followed by a plain-langua
 - **Ask-for-reasoning guardrail** (GTI): the rule must be explained and its false positives surfaced, which helps catch flawed logic.
 - **Validation step** (Gemini, GTI): a built-in checklist before deployment.
 - **Parametrization** (GTI): `${{detection_target}}`, `${{rule_language}}`, `${{indicators}}`, `${{rule_name}}`.
+
+---
+
+[Return to README.md](../README.md)
