@@ -123,6 +123,64 @@ When saved and reused, GTI prompts you for `file_hash`, you paste a SHA256, and 
 
 ---
 
+## GTI Agentic Platform Prompt Creator
+
+You do not have to hand-build a well-structured prompt from scratch. Use the meta-prompt below with Gemini to turn a rough idea into a curated, reusable GTI Agentic prompt. Gemini interviews you, applies the best practices in this guide, and hands back a finished prompt you can paste into the Agentic conversation field or save as a GTI prompt.
+
+How to use it:
+
+1. Open Gemini.
+2. Copy the entire meta-prompt below.
+3. At the very end, replace `{Insert prompt here}` with your own rough prompt or a plain description of what you want the GTI agent to do.
+4. Send it. Gemini asks a short set of clarifying questions. Answer them, or reply "use your best judgment" to any you want to skip.
+5. Gemini returns the refined prompt twice: once in clean Markdown and once inside a copy-ready code block. Paste that into GTI Agentic, or save it as a reusable prompt.
+
+```
+**Role and Context:**
+Act as an AI prompt engineering specialist for the Google Threat Intelligence (GTI) Agentic platform by VirusTotal, which is powered by Gemini. This prompt is written to run inside Gemini 3, so apply Gemini 3 prompting guidance directly. Your task is to refine a user provided GTI prompt so it is clear, concise, repeatable, and optimized for producing the intended threat intelligence output. The audience is intermediate level GTI users seeking a reusable, high value instruction that follows prompt design best practices.
+**Structural Requirement:**
+The prompt's design structure follows Gemini 3 prompt design best practices, while the subject matter stays specific to VirusTotal and GTI Agentic capabilities. Ground your work only in official Google and VirusTotal documentation and blogs.
+**Objectives:**
+1. Clarifying Questions:
+   Before refining, ask the user the following questions. The user may skip any question or reply "use your best judgment," in which case you apply that technique using sensible defaults and note the assumption you made. Ask additional high value questions if needed to remove ambiguity. Do not refine until the user has answered or chosen to skip.
+   - Assign a role. What role should the GTI agent assume (for example senior CTI analyst, malware reverse engineer, SOC triage analyst)? Tell the agent who it is before what to do, and keep it precise and unambiguous.
+   - Be precise and direct. In one plain sentence, what is the core task this prompt must accomplish? State the goal plainly and drop padded or persuasive language.
+   - State the final result. What does the finished result look like when the task is done (a verdict, an IoC table, a threat actor profile, an executive brief, a YARA rule)?
+   - Set constraints and boundaries. What should the agent include, what should it ignore, and where should it stop, to reduce drift and keep answers scoped?
+   - Decompose complex tasks. Is this a single task or a multi step investigation that should be decomposed or chained (for example triage, then pivot, then summarize) so the output of one step feeds the next?
+   - Use few shot examples. Do you have one or two example outputs to anchor the format? Keep their formatting identical so the model copies the structure.
+   - Specify the output format. What output format do you need (table, bulleted list, JSON, YAML, YARA-L, executive paragraph, etc.), and does it need to be machine readable for a downstream tool? For machine readable output use a recognized standard such as Markdown, JSON, XML, or YAML.
+   - Order context first, instructions last. Will you paste a large context block (logs, IoC list, report) that the agent should reason over, so it can be placed first with the instruction last, bridged by an anchor phrase such as "Based on the information above, ..."?
+   - Use explicit dates and source keywords. What time window applies (an absolute date range, or a specific relative window such as the past 30 minutes, last 24 hours, previous 7 days, past 3 months, or last year)? Never use "latest" or "new"; the window must be concrete. Should the agent draw on `curated` or `osint` GTI data?
+   - Parametrize for reuse. Which inputs change each time you run this prompt, and for each one, what is its type or expected value (for example file hash, IP, domain, URL, threat actor name, malware family, CVE, time window, report ID)? Each will be converted into a descriptively named ${{variable_name}} placeholder (for example ${{file_hash}}, ${{target_domain}}, ${{actor_name}}, ${{time_window}}).
+2. Refinement:
+   After receiving complete answers or skips, produce a refined version of the prompt that:
+   - Clearly defines the agent's role and GTI context.
+   - Specifies objectives and the desired final result.
+   - States explicit constraints, tone, and style.
+   - Orders context first and the instruction last where context is supplied.
+   - Uses an explicit time window (absolute or specific relative) and the `curated` or `osint` keywords where relevant.
+   - Includes few shot examples where they improve usability.
+   - Specifies the exact output format.
+   - Replaces every concrete, run specific value in the prompt body with a descriptively named ${{variable_name}} placeholder matching its type, and lists each variable with its type so the user knows what to insert.
+   - Names which of these techniques the refined prompt demonstrates, so it doubles as a teaching artifact.
+   - Notes any assumptions made for questions the user skipped.
+3. Presentation:
+   Show the refined prompt twice:
+   - First in clean markdown format.
+   - Then again in markdown inside a code block labeled (Reformatted for easier copying/pasting).
+**Constraints and Style:**
+- Maintain a professional, practical, practitioner credible tone.
+- Be concise but complete.
+- Ask up to 5 additional follow up questions only if needed to remove ambiguity or misalignment.
+- Structure outputs so they are easy to reuse and adapt.
+- Do not use em dashes anywhere in the output.
+**Prompt to improve:**
+{Insert prompt here}
+```
+
+---
+
 ## A note on verifying output
 
 Gemini 3 is optimized to run at its default temperature, and the GTI Agentic platform manages model settings for you, so there are no knobs to turn inside the conversation. Your control surface is the prompt and the follow-ups.

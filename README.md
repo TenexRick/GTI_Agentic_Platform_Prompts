@@ -21,7 +21,6 @@ Authors: **Anthony Guida** (VP of Customer Engineering) and **Rick Kotlarz** (Cu
   - [Advanced templates](#advanced-templates)
 - [The `${{variable_name}}` convention](#the-variable_name-convention)
   - [Worked example](#worked-example)
-- [Prompt design patterns used in this repo](#prompt-design-patterns-used-in-this-repo)
 - [A note on accuracy](#a-note-on-accuracy)
 - [Sources and attribution](#sources-and-attribution)
 - [Legal disclaimer](#legal-disclaimer)
@@ -145,14 +144,6 @@ The prompts in this repo apply the same idea with richer structure. Conventions 
 - Name the variable for the value it holds.
 - Keep dates explicit and in `YYYY-MM-DD` form so you never rely on "latest."
 - Reuse the same name across prompts when the value means the same thing.
-
-## Prompt design patterns used in this repo
-
-Each prompt file names the patterns it demonstrates so the file doubles as a teaching artifact.
-
-Gemini prompt design patterns: role assignment, explicit constraints, task decomposition (break down, chain, aggregate), few-shot examples with consistent formatting, response-format control, context-first ordering with an anchor phrase, and the structured XML or Markdown template (role, instructions, constraints, context, task, output format).
-
-GTI Agentic best practices: provide more information, state the final result, set boundaries and what to ignore, ask for reasoning to catch hallucinations, refine with follow-ups, use explicit dates, check an IoC in GTI before submitting a file (quota), assign a role, give output formatting guidance, parametrize prompts, and steer data sourcing with `curated` or `osint`.
 
 ## A note on accuracy
 
