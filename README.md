@@ -75,7 +75,7 @@ A few related notes from the GTI documentation:
 1. **Read the best-practices guide first:** [Prompt Engineering Best Practices](01_fundamentals/00_prompt_engineering_best_practices.md). It covers the Gemini 3 strategies, why Markdown is the right format, and a fast way to author prompts with Gemini and Google Docs.
 2. **Pick a prompt** from the tiered index below that matches your task.
 3. **Copy the prompt body.** Every prompt body sits in a fenced code block for one-click copy.
-4. **Fill the variables.** Replace each `${{variable_name}}` with your value, or paste the prompt into the Agentic conversation field and run it.
+4. **Fill the variables.** Every prompt includes `${{variable_name}}` placeholders, listed with descriptions in that prompt's Variables table. Replace each one with your value, then paste the prompt into the Agentic conversation field and run it.
 5. **Save it in GTI for reuse.** In Agentic, go to Prompts, then **+ Create prompt**, paste the body, and keep the `${{variable_name}}` placeholders. GTI will show a form for those variables every time you run it.
 
 ## How to adapt the prompts
